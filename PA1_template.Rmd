@@ -28,10 +28,16 @@ steps_day = summarise (group_by(activity_without_NA, date),total = sum(steps))
 hist(steps_day$total)
 ```
 
-Mean total number of steps taken per day: `r format(mean(steps_day$total), scientific = FALSE)`
 
-Median total number of steps taken per day: `r format(median(steps_day$total), scientific = FALSE)`
+Mean total number of steps taken per day:
+```{r, echo=TRUE}
+mean(steps_day$total)
+```
 
+Median total number of steps taken per day:
+```{r, echo=TRUE}
+median(steps_day$total)
+```
 
 
 ## What is the average daily activity pattern?
@@ -48,7 +54,10 @@ Interval, that contains the maximum number of steps: `r steps_interval [steps_in
 
 ## Imputing missing values
 
-Number of missing values: `r sum(is.na(activity$steps))`
+Number of missing values: 
+```{r, echo=TRUE}
+sum(is.na(activity$steps))
+```
 
 The missing values were replaced by the nearest previous value.
 
@@ -68,12 +77,17 @@ steps_day_imputated = summarise (group_by(activity_imputated, date),total = sum(
 hist(steps_day_imputated$total)
 ```
 
-Mean total number of steps taken per day: `r format(mean(steps_day_imputated$total), scientific = FALSE)`
+Mean total number of steps taken per day:
+```{r, echo=TRUE}
+mean(steps_day_imputated$total)
+```
 
-Median total number of steps taken per day: `r format(median(steps_day_imputated$total), scientific = FALSE)`
+Median total number of steps taken per day:
+```{r, echo=TRUE}
+median(steps_day_imputated$total)
+```
 
-The values are different. They are higher, because a lot of steps were added to the original dataset to fill the missing values.
-
+The values are different. They are lower, because a most of the imputed values are 0. The mean is more affected then the median.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 ```{r, echo=TRUE}
