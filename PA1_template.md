@@ -12,10 +12,14 @@ The downloaded file repdata-data-activity.zip was unzipped into the working dire
 
 
 ```r
+unzip(zipfile = "activity.zip")
 activity = read.csv("activity.csv")
 ```
 
 ## What is mean total number of steps taken per day?
+
+Rows with missing values were omitted.
+
 
 ```r
 library(dplyr)
@@ -51,7 +55,7 @@ Interval, that contains the maximum number of steps: 835
 
 Number of missing values: 2304
 
-The missing values were replaced by the nearest next value.
+The missing values were replaced by the nearest previous value.
 
 
 ```r
