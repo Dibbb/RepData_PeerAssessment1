@@ -55,11 +55,7 @@ Interval, that contains the maximum number of steps: 835
 
 Number of missing values: 2304
 
-<<<<<<< HEAD
 The missing values were replaced by the nearest previous value.
-=======
-The missing values were replaced by the nearest previuos value.
->>>>>>> origin/master
 
 
 ```r
